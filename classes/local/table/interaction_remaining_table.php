@@ -84,7 +84,7 @@ class interaction_remaining_table extends interaction_table {
 
         $ids = implode(',', $courseids);
 
-        $where = 'FALSE';
+        $where = '0=1';
         if ($ids) {
             $where = 'c.id IN ('. $ids . ')';
         }

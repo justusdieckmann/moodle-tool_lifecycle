@@ -46,7 +46,7 @@ class course_backups_table extends \table_sql {
         global $PAGE, $DB;
         $this->set_attribute('class', $this->attributes['class'] . ' ' . $uniqueid);
 
-        $where = ['TRUE'];
+        $where = ['1=1'];
         $params = [];
 
         if ($filterdata) {

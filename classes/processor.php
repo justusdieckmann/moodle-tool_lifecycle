@@ -202,7 +202,7 @@ class processor {
     public function get_course_recordset($triggers, $exclude) {
         global $DB;
 
-        $where = 'true';
+        $where = '1=1';
         $whereparams = [];
         foreach ($triggers as $trigger) {
             $lib = lib_manager::get_automatic_trigger_lib($trigger->subpluginname);

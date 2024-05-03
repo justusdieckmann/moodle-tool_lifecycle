@@ -79,7 +79,7 @@ class delayed_courses_table extends \table_sql {
         }
 
         $params = [];
-        $where = ["TRUE"];
+        $where = ["1=1"];
 
         if ($selectglobaldelays && !$selectseperatedelays) {
             $from = '{tool_lifecycle_delayed} d ' .

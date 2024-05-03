@@ -60,7 +60,7 @@ class interaction_attention_table extends interaction_table {
             'left join {course_categories} cc on c.category = cc.id';
         $ids = implode(',', $courseids);
 
-        $where = ['FALSE'];
+        $where = ['0=1'];
         if ($ids) {
             $where = ['p.courseid IN (' . $ids . ')'];
         }

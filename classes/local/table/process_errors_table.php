@@ -63,7 +63,7 @@ class process_errors_table extends \table_sql {
             'JOIN {tool_lifecycle_step} s ON pe.workflowid = s.workflowid AND pe.stepindex = s.sortindex ' .
             'LEFT JOIN {course} c ON pe.courseid = c.id ';
 
-        $this->set_sql($fields, $from, 'TRUE');
+        $this->set_sql($fields, $from, '1=1');
         $this->column_nosort = ['select', 'tools'];
         $this->define_columns(['select', 'workflow', 'step', 'courseid', 'course', 'error', 'tools']);
         $this->define_headers([

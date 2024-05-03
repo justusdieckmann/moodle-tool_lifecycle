@@ -48,7 +48,7 @@ class active_processes_table extends \table_sql {
         global $PAGE, $DB;
         $this->set_attribute('class', $this->attributes['class'] . ' lifecycle-table ' . $uniqueid);
 
-        $where = ['TRUE'];
+        $where = ['1=1'];
         $params = [];
 
         if ($filterdata) {

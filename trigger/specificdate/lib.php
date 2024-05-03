@@ -80,11 +80,11 @@ class specificdate extends base_automatic {
                     $settings['timelastrun'] = $current;
                     $trigger = trigger_manager::get_instance($triggerid);
                     settings_manager::save_settings($triggerid, settings_type::TRIGGER, $trigger->subpluginname, $settings);
-                    return ['true', []];
+                    return ['1=1', []];
                 }
             }
         }
-        return ['false', []];
+        return ['1=0', []];
     }
 
     /**

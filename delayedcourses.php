@@ -100,7 +100,7 @@ if ($action) {
 
         if ($deleteseperate) {
             $sql = 'DELETE FROM {tool_lifecycle_delayed_workf} dw ' .
-                    'WHERE TRUE ';
+                    'WHERE 1=1 ';
             if ($whereforcourse) {
                 $sql .= 'AND dw.courseid IN ( ' .
                             'SELECT c.id FROM {course} c ' .
