@@ -72,7 +72,9 @@ class select_workflow_table extends \flexible_table {
     public function out() {
         global $DB;
         $records = $DB->get_records_sql('SELECT id, title, displaytitle, timeactive, timedeactive, sortindex ' .
-            'FROM {tool_lifecycle_workflow} ORDER BY timedeactive IS NOT NULL, timeactive IS NOT NULL');
+            'FROM {tool_lifecycle_workflow} ' .
+                'ORDER BY CASE WHEN timedeactive IS NOT NULL THEN 1 ELSE 0 END, ' . // Use case statements because of mssql.
+                'CASE WHEN timeactive IS NOT NULL THEN 1 ELSE 0 END');
         $this->format_and_add_array_of_rows($records, true);
         $this->finish_output();
     }
